@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="joke">
+        <array name = "joke1">
+            <item>Shoe-ed in</item>
+            <item>Dad, could you put on my shoes?</item>
+            <item>I don't think they'll fit me.</item>
+        </array>
+
+        <array name = "joke2">
+            <item>Over the Moon</item>
+            <item>Did you hear about the restaurant on the moon?</item>
+            <item>Great food, no atmosphere.</item>
+        </array>
+
+        <array name="joke3">
+            <item>Calling conventions</item>
+            <item>I'll call you later.</item>
+            <item>Don't call me later, call me dad.</item>
+        </array>
+
+        <array name="joke4">
+            <item>Marching Month"</item>
+            <item>Can February March?"</item>
+            <item>No, but April May."</item>
+        </array>
+    </array>
+</resources>
