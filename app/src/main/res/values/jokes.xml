@@ -1,28 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <array name="joke">
-        <array name = "joke1">
-            <item>Shoe-ed in</item>
-            <item>Dad, could you put on my shoes?</item>
-            <item>I don't think they'll fit me.</item>
-        </array>
-
-        <array name = "joke2">
-            <item>Over the Moon</item>
-            <item>Did you hear about the restaurant on the moon?</item>
-            <item>Great food, no atmosphere.</item>
-        </array>
-
-        <array name="joke3">
-            <item>Calling conventions</item>
-            <item>I'll call you later.</item>
-            <item>Don't call me later, call me dad.</item>
-        </array>
-
-        <array name="joke4">
-            <item>Marching Month"</item>
-            <item>Can February March?"</item>
-            <item>No, but April May."</item>
-        </array>
-    </array>
+    <string-array name="questions">
+        <item>Dad, could you put on my shoes?</item>
+        <item>Did you hear about the restaurant on the moon?</item>
+        <item>Can February March?"</item>
+        <item>Do you get to the Cloud District very often?</item>
+    </string-array>
+    <string-array name="answers">
+        <item>I don\&apos;t think they\&apos;ll fit me.</item>
+        <item>Great food, no atmosphere.</item>
+        <item>No, but April May.</item>
+        <item>Oh, what am I saying - of course you don\&apos;t. ^*^%*\&amp;$^#* NAZEEM YOU $*@$#;</item>
+    </string-array>
 </resources>

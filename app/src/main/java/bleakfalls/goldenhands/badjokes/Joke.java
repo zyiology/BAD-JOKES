@@ -4,37 +4,37 @@ package bleakfalls.goldenhands.badjokes;
  * Created by S9925872A on 3/3/2015.
  */
 public class Joke {
-    String mTitle;
     String mQuestion;
     String mAnswer;
+    boolean mClicked;
 
-    public Joke(String title, String question, String answer) {
-        mTitle = title;
+    public Joke(String question, String answer) {
         mQuestion = question;
         mAnswer = answer;
+        mClicked = false;
     }
 
-    public String getmTitle() {
-        return mTitle;
-    }
-
-    public void setmTitle(String title) {
-        this.mTitle = title;
-    }
-
-    public String getmQuestion() {
+    public String getQuestion() {
         return mQuestion;
     }
 
-    public void setmQuestion(String question) {
+    public void setQuestion(String question) {
         this.mQuestion = question;
     }
 
-    public String getmAnswer() {
+    public String getAnswer() {
         return mAnswer;
     }
 
-    public void setmAnswer(String answer) {
+    public void setAnswer(String answer) {
         this.mAnswer = answer;
+    }
+
+    public boolean getClicked() {
+        return mClicked;
+    }
+
+    public void setClicked(boolean clicked) {
+        this.mClicked = clicked;
     }
 }
