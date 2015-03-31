@@ -4,5 +4,12 @@
     <string name="app_name">Bad Jokes</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_joke_detail">JokeDetailActivity</string>
+
+    <color name="bgPurple">#4D4285</color>#<!--backgroundpurple-->
+    <color name="fgGreen">#7A8542</color><!--foregroundgreen-->
+    <color name="blue">#1FA5BF</color>
+    <color name="red">#BF391F</color>
+
 
 </resources>

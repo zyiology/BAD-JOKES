@@ -2,6 +2,7 @@ package bleakfalls.goldenhands.badjokes;
 
 import android.app.ListActivity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.support.v7.app.ActionBarActivity;
@@ -20,7 +21,7 @@ import android.widget.Toast;
 import java.util.List;
 
 
-public class MainActivity extends ListActivity {
+public class JokeActivity extends ListActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +44,11 @@ public class MainActivity extends ListActivity {
         Joke joke = (Joke)this.getListAdapter().getItem(position);
         String answer = joke.getAnswer();
         Toast.makeText(this, answer, Toast.LENGTH_SHORT).show();
+        joke.setClicked(true);
+        ArrayAdapter<Joke> adapter = (ArrayAdapter<Joke>) getListAdapter();
+        adapter.notifyDataSetChanged();
+        Intent i = new Intent(JokeActivity.this, JokeDetailActivity.class);
+        startActivity(i);
     }
 
     @Override

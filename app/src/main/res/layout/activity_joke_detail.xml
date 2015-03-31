@@ -1,0 +1,48 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="bleakfalls.goldenhands.badjokes.JokeDetailActivity"
+    android:background="@color/bgPurple">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/fgGreen">
+        <TextView
+            android:id="@+id/Name"
+            android:textSize="20dp"
+            android:textColor="@color/bgPurple"
+            android:text="TITLE"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="40dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NAME:"
+            android:textSize="20dp"
+            android:textColor="@color/red"
+            android:background="@color/blue" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:text="<anem>"
+            android:textSize="20dp"
+            android:background="@color/red"
+            android:textColor="@color/blue" />
+    </RelativeLayout>
+
+</RelativeLayout>
