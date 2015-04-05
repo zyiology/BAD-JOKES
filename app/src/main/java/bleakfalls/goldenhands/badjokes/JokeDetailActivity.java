@@ -4,6 +4,9 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 
 public class JokeDetailActivity extends ActionBarActivity {
@@ -12,6 +15,22 @@ public class JokeDetailActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_joke_detail);
+        Joke mJoke = (Joke) getIntent().getExtras().get(JokeActivity.SELECTED_JOKE);
+        TextView mJokeQuestion = (TextView) findViewById(R.id.jokeQuestion);
+        final TextView mJokeAnswer = (TextView) findViewById(R.id.jokeAnswer);
+
+        mJokeQuestion.setText(mJoke.getQuestion());
+        mJokeAnswer.setText(mJoke.getAnswer());
+        mJokeAnswer.setVisibility(View.INVISIBLE);
+
+        Button mRevealJokeAnswer = (Button) findViewById(R.id.revealAnswer);
+
+        mRevealJokeAnswer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mJokeAnswer.setVisibility(View.VISIBLE);
+            }
+        });
     }
 
 

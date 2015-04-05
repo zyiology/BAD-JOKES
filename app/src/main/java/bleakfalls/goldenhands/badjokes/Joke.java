@@ -1,9 +1,13 @@
 package bleakfalls.goldenhands.badjokes;
 
+import android.os.Parcelable;
+
+import java.io.Serializable;
+
 /**
  * Created by S9925872A on 3/3/2015.
  */
-public class Joke {
+public class Joke implements Serializable {
     String mQuestion;
     String mAnswer;
     boolean mClicked;

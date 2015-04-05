@@ -1,48 +1,58 @@
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="bleakfalls.goldenhands.badjokes.JokeDetailActivity"
-    android:background="@color/bgPurple">
-
+    android:orientation="vertical"
+    android:weightSum="2"
+    android:background="@color/bgGold" >
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/fgGreen">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/fgRed">
         <TextView
-            android:id="@+id/Name"
-            android:textSize="20dp"
-            android:textColor="@color/bgPurple"
-            android:text="TITLE"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/jokeQuestionTitle"
+            android:textSize="25sp"
+            android:textColor="@color/bgGold"
+            android:gravity="center_horizontal"/>
+        <TextView
+            android:id="@+id/jokeQuestion"
+            android:textSize="20sp"
+            android:textColor="@color/bgGold"
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            />
     </RelativeLayout>
-
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="40dp">
-        <TextView
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <Button style="?android:attr/borderlessButtonStyle"
+            android:id="@+id/revealAnswer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="NAME:"
-            android:textSize="20dp"
-            android:textColor="@color/red"
-            android:background="@color/blue" />
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:text="@string/jokeAnswerTitle"
+            android:textSize="20sp"
+            android:textColor="@color/bgGold"
+            android:background="@color/fgRed"
+            />
         <TextView
+            android:id="@+id/jokeAnswer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:text="<anem>"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
             android:textSize="20dp"
-            android:background="@color/red"
-            android:textColor="@color/blue" />
+            android:textColor="@color/fgRed" /><!--remove text-->
     </RelativeLayout>
 
-</RelativeLayout>
+</LinearLayout>

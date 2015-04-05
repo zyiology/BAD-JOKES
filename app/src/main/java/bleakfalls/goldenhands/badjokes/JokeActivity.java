@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
+import android.os.Parcelable;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,38 +17,49 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
 
 
 public class JokeActivity extends ListActivity {
 
+    public static String SELECTED_JOKE = "com.bleakfalls.goldenhand.badjokes.jokeactivity.joke";
+    private static String JOKES_LIST = "com.bleakfalls.goldenhand.badjokes.jokeactivity.listview";
+    private Joke[] mJokes;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Resources res = getResources();
-        String[] qs = res.getStringArray(R.array.questions);
-        String[] ans = res.getStringArray(R.array.answers);
-        Joke[] mJokes = new Joke[qs.length];
-        for (int i=0; i<qs.length; i++) {
-            Joke newJoke = new Joke(qs[i], ans[i]);
-            mJokes[i] = newJoke;
+        setContentView(R.layout.activity_joke);
+        if (savedInstanceState!=null) {
+            Log.d("start","found instance");
+            mJokes = (Joke[])savedInstanceState.getSerializable(JOKES_LIST);
+        }
+        else {
+            Resources res = getResources();
+            String[] mQuestions = res.getStringArray(R.array.questions);
+            String[] mAnswers = res.getStringArray(R.array.answers);
+            mJokes = new Joke[mQuestions.length];
+            for (int i = 0; i < mQuestions.length; i++) {
+                Joke newJoke = new Joke(mQuestions[i], mAnswers[i]);
+                mJokes[i] = newJoke;
+            }
         }
         JokeAdapter adapter = new JokeAdapter(this, R.layout.list_item_joke, mJokes);
         setListAdapter(adapter);
+
     }
 
     protected void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
-        Joke joke = (Joke)this.getListAdapter().getItem(position);
-        String answer = joke.getAnswer();
-        Toast.makeText(this, answer, Toast.LENGTH_SHORT).show();
-        joke.setClicked(true);
+        Joke mJoke = (Joke)this.getListAdapter().getItem(position);
+        String mAnswer = mJoke.getAnswer();
+        mJoke.setClicked(true);
         ArrayAdapter<Joke> adapter = (ArrayAdapter<Joke>) getListAdapter();
         adapter.notifyDataSetChanged();
         Intent i = new Intent(JokeActivity.this, JokeDetailActivity.class);
+        i.putExtra(SELECTED_JOKE,mJoke);
         startActivity(i);
     }
 
@@ -71,6 +83,12 @@ public class JokeActivity extends ListActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putSerializable(JOKES_LIST, mJokes);
     }
 
     private class JokeAdapter extends ArrayAdapter<Joke> {

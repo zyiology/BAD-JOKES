@@ -5,11 +5,15 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_joke_detail">JokeDetailActivity</string>
+    <string name="jokeQuestionTitle">Question:</string>
+    <string name="jokeAnswerTitle">Tap to reveal answer!</string>
 
-    <color name="bgPurple">#4D4285</color>#<!--backgroundpurple-->
-    <color name="fgGreen">#7A8542</color><!--foregroundgreen-->
-    <color name="blue">#1FA5BF</color>
-    <color name="red">#BF391F</color>
+
+    <color name="bgGold">#E3CC20</color>#<!--backgroundgray-->
+    <color name="fgRed">#C23232</color><!--foregroundgreen-->
+    <color name="blue">#283175</color>
+    <color name="red">#C70202</color>
+    <color name="gray">#8A7F71</color>
 
 
 </resources>
